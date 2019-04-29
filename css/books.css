@@ -3,12 +3,23 @@
 	display: inline-flex;
 }
 
-.displaycat-cooper-book::before {
+.displaycat-book::before {
 	content: '';
   display: inline-block;
 	height: .8em;
 	width: 1.2em;
-	background-image: url('../img/cooper.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+.displaycat-cooper-book::before {
+	background-image: url('../img/cooper.svg');
+}
+.displaycat-denson-book::before {
+	background-image: url('../img/denson.svg');
+}
+.displaycat-christian-harmony::before {
+	background-image: url('../img/christianharmony.svg');
+}
+.displaycat-shenandoah-harmony::before {
+	background-image: url('../img/shenandoah.svg');
 }
