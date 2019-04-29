@@ -57,15 +57,21 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * Set global colours and typefaces
  */
 
- :root {
- 	  --main-bg-color: #fff;
- 		 --sub-bg-color: #f3e9d2; /* eggshell */
-  	--main-text-color: #000;
- 	 --sub-text-color: #333;
-  --main-cont-color1: #0f512c; /* cal poly pomona green */
- 	--sub-cont-color1: #91d387; /* dark sea green */
-  --main-cont-color2: #094074; /* dark cerulean */
+@import url('https://fonts.googleapis.com/css?family=Overlock:700|Vollkorn:400,700');
 
+ :root {
+	    --main-bg-color: #fff;
+	     --sub-bg-color: #fff; /*#f3e9d2; /* eggshell */
+	  --main-text-color: #000;
+	   --sub-text-color: #333;
+	 --main-cont-color1: #0f512c; /* cal poly pomona green */
+	  --sub-cont-color1: #91d387; /* dark sea green */
+	 --main-cont-color2: #094074; /* dark cerulean */
+/*	 			  --logo-font: 'Vollkorn', serif;*/
+				  --logo-font: 'Merriweather', Georgia, serif;
+				--header-font: 'Vollkorn', serif;
+				  --body-font: Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+	  	 --system-stack: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
  }
 
 
