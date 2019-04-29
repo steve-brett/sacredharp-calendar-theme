@@ -369,6 +369,9 @@ function twentysixteen_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri() );
 
+	// Book category styles.
+	wp_enqueue_style( 'sacredharp-books', get_template_directory_uri() . '/css/books.css' );
+
 	// Theme block stylesheet.
 	wp_enqueue_style( 'twentysixteen-block-style', get_template_directory_uri() . '/css/blocks.css', array( 'twentysixteen-style' ), '20181230' );
 
@@ -591,7 +594,10 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
  		$term_list = wp_get_post_terms( $event_id, Tribe__Events__Main::TAXONOMY );
 
  		foreach( $term_list as $term_single ) {
- 			$event_cats[] = array("name" => $term_single->name, "slug" => $term_single->slug);
+ 			$event_cats[] = array(
+				'name' => $term_single->name,
+				'slug' => $term_single->slug
+				);
  		}
 
  		return $event_cats;
@@ -601,15 +607,15 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 	/* get event category names in text format */
 	function shcal_format_text_categories ( array $event_cats ) {
 
-		$html_output = '';
+		$html = '';
 
 		foreach( $event_cats as $cat_single ) {
-			$html_output .= '<li><span class="displaycat-' . $cat_single['slug'] .'">';
-			$html_output .= $cat_single['name'];
-			$html_output .= '</span></li>' . PHP_EOL;
+			$html .= '<li class="displaycat-' . $cat_single['slug'] .'">';
+			$html .= $cat_single['name'];
+			$html .= '</li>' . PHP_EOL;
 		}
 
-		return $html_output;
+		return $html;
 
 	}
 

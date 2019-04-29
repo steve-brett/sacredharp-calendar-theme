@@ -1,0 +1,14 @@
+.shcalendar-category-list {
+	list-style-type: none;
+	display: inline-flex;
+}
+
+.displaycat-cooper-book::before {
+	content: '';
+  display: inline-block;
+	height: .8em;
+	width: 1.2em;
+	background-image: url('../img/cooper.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
