@@ -60,22 +60,23 @@ echo tribe_event_featured_image( null, 'large' );
 </div><!-- .tribe-events-event-meta -->
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
 
-<!-- Event Cost -->
-<?php if ( tribe_get_cost() ) : ?>
-	<div class="tribe-events-event-cost featured-event">
-		<span class="ticket-cost"><?php echo esc_html( tribe_get_cost( null, true ) ); ?></span>
-		<?php
-		/** This action is documented in the-events-calendar/src/views/list/single-event.php */
-		do_action( 'tribe_events_inside_cost' )
-		?>
-	</div>
+<?php if ( tribe_get_text_categories() ) : ?>
+<section class="shcalendar-categories">
+	<h3>Books:</h3>
+	<ul class="shcalendar-category-list">
+		<?php $event_cats = tribe_get_text_categories(); ?>
+		<?php echo shcal_format_text_categories($event_cats);?>
+	</ul>
+</section>
 <?php endif; ?>
+
+<!-- Event Cost [removed] -->
 
 <!-- Event Content -->
 <?php do_action( 'tribe_events_before_the_content' ) ?>
 <div class="tribe-events-list-event-description tribe-events-content">
 	<?php echo tribe_events_get_the_excerpt( null, wp_kses_allowed_html( 'post' ) ); ?>
-	<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?> &raquo;</a>
+	<!---<a href="<?php echo esc_url( tribe_get_event_link() ); ?>" class="tribe-events-read-more" rel="bookmark"><?php esc_html_e( 'Find out more', 'the-events-calendar' ) ?> &raquo;</a>-->
 </div><!-- .tribe-events-list-event-description -->
 <?php
 do_action( 'tribe_events_after_the_content' );
