@@ -610,7 +610,7 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 		$html = '';
 
 		foreach( $event_cats as $cat_single ) {
-			$html .= '<li class="displaycat-' . $cat_single['slug'] .'">';
+			$html .= '<li class="displaycat-book displaycat-' . $cat_single['slug'] .'">';
 			$html .= $cat_single['name'];
 			$html .= '</li>' . PHP_EOL;
 		}

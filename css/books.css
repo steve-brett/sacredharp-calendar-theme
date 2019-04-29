@@ -1,6 +1,10 @@
+.shcalendar-categories {
+    display: flex;
+}
+
 .shcalendar-category-list {
 	list-style-type: none;
-	display: inline-flex;
+  display: inline-flex;
 }
 
 .displaycat-book::before {
