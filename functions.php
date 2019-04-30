@@ -620,3 +620,20 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 	}
 
  }
+
+ /**
+	* Organizer Phone
+	*
+	* Returns the event Organizer's phone number
+	*
+	* @param int $post_id Can supply either event id or organizer id, if none specified, current post is used
+	*
+	* @return string Organizer's Phone Number
+	*/
+ function shcal_get_organizer_meta ( $post_id = null ) {
+	 $post_id = Tribe__Events__Main::postIdHelper( $post_id );
+	 $output = get_post_field( 'post_content', tribe_get_organizer_id( $post_id ), );
+
+	 //return apply_filters( 'tribe_get_organizer_phone', $output );
+	 return $output;
+ }
