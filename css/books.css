@@ -2,12 +2,21 @@
     display: flex;
 }
 
+.shcalendar-categories h3 {
+    font-size: 1rem;
+    line-height: inherit;
+    margin-bottom: 0;
+}
+
 .shcalendar-category-list {
 	list-style-type: none;
   display: inline-flex;
 }
+.displaycat-book {
+  padding-left: .6em;
+}
 
-.displaycat-book::before {
+.displaycat-book a::before {
 	content: '';
   display: inline-block;
 	height: .8em;
@@ -15,15 +24,19 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-.displaycat-cooper-book::before {
+
+.displaycat-book a[href*="denson"]:before {
+  background-image: url('../img/denson.svg');
+}
+
+.displaycat-book a[href*="cooper"]:before {
 	background-image: url('../img/cooper.svg');
 }
-.displaycat-denson-book::before {
-	background-image: url('../img/denson.svg');
-}
-.displaycat-christian-harmony::before {
+
+.displaycat-book a[href*="christian"]:before {
 	background-image: url('../img/christianharmony.svg');
 }
-.displaycat-shenandoah-harmony::before {
+
+.displaycat-book a[href*="shenandoah"]:before {
 	background-image: url('../img/shenandoah.svg');
 }
