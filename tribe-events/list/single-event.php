@@ -66,11 +66,20 @@ $organizer = tribe_get_organizer();
 
 <?php if ( tribe_get_text_categories() ) : ?>
 <section class="shcalendar-categories">
-	<h3>Books:</h3>
-	<ul class="shcalendar-category-list">
-		<?php $event_cats = tribe_get_text_categories(); ?>
-		<?php echo shcal_format_text_categories($event_cats);?>
-	</ul>
+	<?php
+	echo tribe_get_event_categories(
+		get_the_id(), array(
+			'before'       => '<li class="displaycat-book">',
+			'sep'          => '</li>' . PHP_EOL . '<li class="displaycat-book">',
+			'after'        => '</li>',
+			'label'        => 'Books', // An appropriate plural/singular label will be provided
+			'label_before' => '<h3>',
+			'label_after'  => '</h3>',
+			'wrap_before'  => '<ul class="shcalendar-category-list">',
+			'wrap_after'   => '</ul>',
+		)
+	);
+	?>
 </section>
 <?php endif; ?>
 
