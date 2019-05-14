@@ -622,15 +622,15 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
  }
 
  /**
-	* Organizer Phone
+	* Organizer Description
 	*
-	* Returns the event Organizer's phone number
+	* Returns the event Organizer's description
 	*
 	* @param int $post_id Can supply either event id or organizer id, if none specified, current post is used
 	*
-	* @return string Organizer's Phone Number
+	* @return string Organizer's description
 	*/
- function shcal_get_organizer_meta ( $post_id = null ) {
+ function shcal_get_organizer_description ( $post_id = null ) {
 	 $post_id = Tribe__Events__Main::postIdHelper( $post_id );
 	 $output = get_post_field( 'post_content', tribe_get_organizer_id( $post_id ), );
 
