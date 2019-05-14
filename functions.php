@@ -637,6 +637,18 @@ add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
 	 //return apply_filters( 'tribe_get_organizer_phone', $output );
 	 return $output;
  }
+
+ /**
+ * Hide WordPress update nag to all but admins
+ */
+
+function hide_update_notice_to_all_but_admin() {
+    if ( !current_user_can( 'update_core' ) ) {
+        remove_action( 'admin_notices', 'update_nag', 3 );
+    }
+}
+add_action( 'admin_head', 'hide_update_notice_to_all_but_admin', 1 );
+
 /**
  * Remove comments
  */
