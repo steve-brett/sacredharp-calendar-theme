@@ -84,8 +84,6 @@ $organizer = tribe_get_organizer();
 <?php endif; ?>
 
 <?php echo tribe_get_organizer_details(); ?>
-<?php var_dump(shcal_get_organizer_meta()); ?>
-
 
 <!-- Event Cost [removed] -->
 
